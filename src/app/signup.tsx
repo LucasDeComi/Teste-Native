@@ -4,7 +4,7 @@ import { pageStyles as styles } from "@/constants/styles"
 import Input from "@/components/Input"
 import Button from "@/components/Button"
 
-export default function Index() {
+export default function Signup() {
     return (
         <KeyboardAvoidingView
             style={{ flex: 1 }}
@@ -17,22 +17,24 @@ export default function Index() {
             >
                 <View style={ styles.container }>
                     <Image
-                        source={require("@/assets/img1.png")}
+                        source={require("@/assets/img2.png")}
                         style={ styles.illustration }
                     />
 
-                    <Text style={ styles.title }>Entrar</Text>
-                    <Text style={ styles.subtitle }>Acesse sua conta com e-mail e senha.</Text>
+                    <Text style={ styles.title }>Cadastrar</Text>
+                    <Text style={ styles.subtitle }>Crie sua conta para acessar.</Text>
 
                     <View style={ styles.form }>
+                        <Input placeholder="Nome" />
                         <Input placeholder="E-mail" keyboardType="email-address" />
                         <Input placeholder="Senha" secureTextEntry />
+                        <Input placeholder="Confirmar Senha" secureTextEntry />
                         <Button>Entrar</Button>
                     </View>
                     
                     <Text style={ styles.footerText }>
-                        Não tem uma conta?{" "}
-                        <Link style={ styles.link } href="/signup">Cadastre-se aqui.</Link>
+                        Já tem uma conta?{" "}
+                        <Link style={ styles.link } href="/">Entre aqui.</Link>
                     </Text>
                 </View>
             </ScrollView>

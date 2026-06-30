@@ -1,4 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from "react-native"
+import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native"
+import { buttonStyles as styles } from "@/constants/styles"
 
 type ButtonProps = TouchableOpacityProps & {
     children: React.ReactNode;
@@ -11,19 +12,3 @@ export default function Button({ children, ...rest }: ButtonProps) {
         </TouchableOpacity>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        width: "100%",
-        height: 48,
-        backgroundColor: "#3366FF",
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 8
-    },
-    label: {
-        color: "#FFF",
-        fontSize: 16,
-        fontWeight: 600
-    }
-});
