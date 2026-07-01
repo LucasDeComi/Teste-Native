@@ -2,6 +2,8 @@ import { useState } from "react"
 import { View, Image, Text, ScrollView, KeyboardAvoidingView, Platform, Alert } from "react-native"
 import { Link, useRouter } from "expo-router"
 import { pageStyles as styles } from "@/constants/styles"
+import Title from "@/components/Title"
+import Subtitle from "@/components/Subtitle"
 import Input from "@/components/Input"
 import Button from "@/components/Button"
 
@@ -28,7 +30,7 @@ export default function Signup() {
 
     return (
         <KeyboardAvoidingView
-            style={{ flex: 1 }}
+            className="flex-1"
             behavior={Platform.select({ ios: "padding", android: "height" })}
         >
             <ScrollView
@@ -42,8 +44,8 @@ export default function Signup() {
                         style={ styles.illustration }
                     />
 
-                    <Text style={ styles.title }>Cadastrar</Text>
-                    <Text style={ styles.subtitle }>Crie sua conta para acessar.</Text>
+                    <Title>Cadastrar</Title>
+                    <Subtitle>Crie sua conta para acessar.</Subtitle>
 
                     <View style={ styles.form }>
                         <Input

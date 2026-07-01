@@ -1,5 +1,4 @@
 import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native"
-import { buttonStyles as styles } from "@/constants/styles"
 
 type ButtonProps = TouchableOpacityProps & {
     children: React.ReactNode;
@@ -7,8 +6,11 @@ type ButtonProps = TouchableOpacityProps & {
 
 export default function Button({ children, ...rest }: ButtonProps) {
     return (
-        <TouchableOpacity style={styles.container} activeOpacity={.75} {...rest}>
-            <Text style={styles.label}>{children}</Text>
+        <TouchableOpacity
+            className="w-full h-12 bg-[#3366FF] justify-center items-center rounded-lg"
+            activeOpacity={.75} {...rest}
+        >
+            <Text className="text-[#FFF] text-[16px] font-semibold">{children}</Text>
         </TouchableOpacity>
     )
 }

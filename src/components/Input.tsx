@@ -1,8 +1,10 @@
 import { TextInput, TextInputProps } from "react-native"
-import { inputStyles as styles } from "@/constants/styles"
 
 export default function Input({ ...rest }: TextInputProps) {
     return (
-        <TextInput style={styles.input} placeholderTextColor="#888" { ...rest } />
+        <TextInput
+            className="w-full h-12 border border-[#DCDCDC] rounded-lg pl-3 text-[16px] text-[#000]"
+            placeholderTextColor="#888" { ...rest }
+        />
     )
 }
