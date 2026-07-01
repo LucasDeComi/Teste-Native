@@ -1,10 +1,22 @@
-import { View, Image, Text, ScrollView, KeyboardAvoidingView, Platform } from "react-native"
+import { useState } from "react"
+import { View, Image, Text, ScrollView, KeyboardAvoidingView, Platform, Alert } from "react-native"
 import { Link } from "expo-router"
 import { pageStyles as styles } from "@/constants/styles"
 import Input from "@/components/Input"
 import Button from "@/components/Button"
 
 export default function Index() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    function handleSignIn() {
+        if(!email.trim || !password.trim()) {
+            return Alert.alert("Entrar", "Preencha e-mail e senha para entrar.")
+        }
+
+        Alert.alert("Bem-vindo", "Login realizado com sucesso!")
+    }
+
     return (
         <KeyboardAvoidingView
             style={{ flex: 1 }}
@@ -25,9 +37,17 @@ export default function Index() {
                     <Text style={ styles.subtitle }>Acesse sua conta com e-mail e senha.</Text>
 
                     <View style={ styles.form }>
-                        <Input placeholder="E-mail" keyboardType="email-address" />
-                        <Input placeholder="Senha" secureTextEntry />
-                        <Button>Entrar</Button>
+                        <Input
+                            placeholder="E-mail"
+                            keyboardType="email-address"
+                            onChangeText={setEmail}
+                        />
+                        <Input
+                            placeholder="Senha"
+                            secureTextEntry
+                            onChangeText={setPassword}
+                        />
+                        <Button onPress={handleSignIn}>Entrar</Button>
                     </View>
                     
                     <Text style={ styles.footerText }>
