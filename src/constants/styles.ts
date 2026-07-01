@@ -59,6 +59,7 @@ export const inputStyles = StyleSheet.create({
         borderColor: "#DCDCDC",
         borderRadius: 8,
         fontSize: 16,
-        paddingLeft: 12
+        paddingLeft: 12,
+        color: "#000"
     }
 });
