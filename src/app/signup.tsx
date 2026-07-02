@@ -29,53 +29,42 @@ export default function Signup() {
     }
 
     return (
-        <KeyboardAvoidingView
-            className="flex-1"
-            behavior={Platform.select({ ios: "padding", android: "height" })}
-        >
-            <ScrollView
-                contentContainerStyle={{ flexGrow: 1 }}
-                keyboardShouldPersistTaps="handled"
-                showsVerticalScrollIndicator={false}
-            >
-                <View style={ styles.container }>
-                    <Image
-                        source={require("@/assets/img2.png")}
-                        style={ styles.illustration }
-                    />
+        <>
+            <Image
+                source={require("@/assets/img2.png")}
+                style={ styles.illustration }
+            />
 
-                    <Title>Cadastrar</Title>
-                    <Subtitle>Crie sua conta para acessar.</Subtitle>
+            <Title>Cadastrar</Title>
+            <Subtitle>Crie sua conta para acessar.</Subtitle>
 
-                    <View style={ styles.form }>
-                        <Input
-                            placeholder="Nome"
-                            onChangeText={setName}
-                        />
-                        <Input
-                            placeholder="E-mail"
-                            keyboardType="email-address"
-                            onChangeText={setEmail}
-                        />
-                        <Input
-                            placeholder="Senha"
-                            secureTextEntry
-                            onChangeText={setPassword}
-                        />
-                        <Input
-                            placeholder="Confirmar Senha"
-                            secureTextEntry
-                            onChangeText={setConfirm}
-                        />
-                        <Button onPress={handleSignUp}>Cadastrar</Button>
-                    </View>
-                    
-                    <Text style={ styles.footerText }>
-                        Já tem uma conta?{" "}
-                        <Link style={ styles.link } href="/">Entre aqui.</Link>
-                    </Text>
-                </View>
-            </ScrollView>
-        </KeyboardAvoidingView>
+            <View style={ styles.form }>
+                <Input
+                    placeholder="Nome"
+                    onChangeText={setName}
+                />
+                <Input
+                    placeholder="E-mail"
+                    keyboardType="email-address"
+                    onChangeText={setEmail}
+                />
+                <Input
+                    placeholder="Senha"
+                    secureTextEntry
+                    onChangeText={setPassword}
+                />
+                <Input
+                    placeholder="Confirmar Senha"
+                    secureTextEntry
+                    onChangeText={setConfirm}
+                />
+                <Button onPress={handleSignUp}>Cadastrar</Button>
+            </View>
+            
+            <Text style={ styles.footerText }>
+                Já tem uma conta?{" "}
+                <Link style={ styles.link } href="/">Entre aqui.</Link>
+            </Text>
+        </>
     )
 }
